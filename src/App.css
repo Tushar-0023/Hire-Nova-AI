@@ -1,0 +1,21 @@
+.custom-navbar {
+  background: rgba(10, 15, 30, 0.9);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Nav links */
+.nav-link {
+  color: #ffffff !important;
+  transition: 0.3s;
+}
+
+.nav-link:hover {
+  color: #00d4ff !important;
+  transform: translateY(-2px);
+}
+
+/* Brand glow effect */
+.navbar-brand {
+  letter-spacing: 1px;
+}
