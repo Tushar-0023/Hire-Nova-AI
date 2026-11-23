@@ -1,0 +1,1411 @@
+/* =========================================================
+   HIRENOVA AI — RECRUITER DASHBOARD
+   Premium SaaS • Responsive
+========================================================= */
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+.container {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  background:
+    radial-gradient(
+      circle at 85% 10%,
+      rgba(99, 102, 241, 0.08),
+      transparent 30%
+    ),
+    #f4f6fb;
+  font-family:
+    "Inter",
+    "Segoe UI",
+    system-ui,
+    sans-serif;
+  color: #111827;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.sidebar {
+  position: relative;
+  z-index: 100;
+  width: 265px;
+  min-width: 265px;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 30px 20px;
+  background:
+    linear-gradient(
+      180deg,
+      #0b1220 0%,
+      #111827 55%,
+      #0f172a 100%
+    );
+  color: #ffffff;
+  box-shadow:
+    8px 0 30px rgba(15, 23, 42, 0.14);
+  transition:
+    transform 0.3s ease,
+    width 0.3s ease;
+  overflow: hidden;
+}
+
+.sidebar::after {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  top: -70px;
+  left: -80px;
+  border-radius: 50%;
+  background: rgba(99, 102, 241, 0.12);
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo {
+  position: relative;
+  z-index: 2;
+  margin: 0 0 42px;
+  font-size: 25px;
+  font-weight: 800;
+  letter-spacing: -0.7px;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   SIDEBAR MENU
+========================================================= */
+
+.menu {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 6px;
+}
+
+.menu p {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 15px 17px;
+  margin: 0;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  color: #aeb8ca;
+  white-space: nowrap;
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.menu p:hover {
+  background: rgba(255, 255, 255, 0.075);
+  transform: translateX(5px);
+  color: #ffffff;
+  box-shadow:
+    inset 3px 0 0 #6366f1;
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.main {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 38px 42px 50px;
+  overflow-x: hidden;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header {
+  margin: 0 0 30px;
+  font-size: 32px;
+  line-height: 1.2;
+  font-weight: 750;
+  letter-spacing: -1px;
+  color: #111827;
+}
+
+
+/* =========================================================
+   DASHBOARD GRID
+========================================================= */
+
+.grid {
+  display: grid;
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  width: 100%;
+  margin-top: 18px;
+}
+
+
+/* =========================================================
+   DASHBOARD CARDS
+========================================================= */
+
+.card,
+.bigCard {
+  position: relative;
+  box-sizing: border-box;
+  min-width: 0;
+  padding: 25px;
+  border-radius: 18px;
+  border: 1px solid #e7ebf3;
+  background:
+    linear-gradient(
+      145deg,
+      #ffffff,
+      #fafbff
+    );
+  box-shadow:
+    0 8px 25px rgba(15, 23, 42, 0.06);
+  overflow: hidden;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.card:hover,
+.bigCard:hover {
+  transform: translateY(-4px);
+  border-color:
+    rgba(99, 102, 241, 0.2);
+  box-shadow:
+    0 16px 35px rgba(15, 23, 42, 0.09);
+}
+
+.card h3,
+.bigCard h3 {
+  margin: 0 0 12px;
+  font-size: 15px;
+  font-weight: 650;
+  color: #64748b;
+}
+
+.card p {
+  margin: 0;
+  font-size: 34px;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: -1px;
+  color: #111827;
+}
+
+.bigCard {
+  grid-column: span 2;
+}
+
+.bigCard p {
+  max-width: 850px;
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #64748b;
+}
+
+
+/* =========================================================
+   FORM CARD
+========================================================= */
+
+.formCard {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 30px;
+  margin-bottom: 32px;
+  border-radius: 20px;
+  border: 1px solid #e7ebf3;
+  background:
+    linear-gradient(
+      145deg,
+      #ffffff,
+      #fafbff
+    );
+  box-shadow:
+    0 12px 35px rgba(15, 23, 42, 0.07);
+  overflow: hidden;
+  animation:
+    cardEnter 0.55s ease both;
+}
+
+.formCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 28px;
+  width: 65px;
+  height: 3px;
+  border-radius: 10px;
+  background:
+    linear-gradient(
+      90deg,
+      #6366f1,
+      #06b6d4
+    );
+  box-shadow:
+    0 0 15px rgba(99, 102, 241, 0.35);
+}
+
+.formCard h3 {
+  margin: 0;
+  font-size: 19px;
+  color: #111827;
+}
+
+
+/* =========================================================
+   FORM INPUTS
+========================================================= */
+
+.grid input,
+.grid textarea {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 15px 16px;
+  border: 1px solid #e1e6ef;
+  border-radius: 12px;
+  outline: none;
+  background: #f9fafc;
+  color: #111827;
+  font-size: 15px;
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.grid input:hover,
+.grid textarea:hover {
+  border-color: #cbd5e1;
+  background: #ffffff;
+}
+
+.grid input:focus,
+.grid textarea:focus {
+  border-color: #6366f1;
+  background: #ffffff;
+  box-shadow:
+    0 0 0 4px
+    rgba(99, 102, 241, 0.09);
+  transform: translateY(-1px);
+}
+
+.grid input::placeholder,
+.grid textarea::placeholder {
+  color: #9ca3af;
+}
+
+.grid textarea {
+  grid-column: span 2;
+  min-height: 125px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   PRIMARY BUTTON
+========================================================= */
+
+.primaryBtn {
+  margin-top: 17px;
+  padding: 14px 22px;
+  border: none;
+  border-radius: 11px;
+  background:
+    linear-gradient(
+      135deg,
+      #4f46e5,
+      #6366f1,
+      #7c3aed
+    );
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 650;
+  box-shadow:
+    0 9px 22px
+    rgba(79, 70, 229, 0.2);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    filter 0.25s ease;
+}
+
+.primaryBtn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+  box-shadow:
+    0 14px 30px
+    rgba(79, 70, 229, 0.3);
+}
+
+.primaryBtn:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   JOBS GRID
+========================================================= */
+
+.jobsGrid {
+  display: grid;
+  grid-template-columns:
+    repeat(
+      auto-fit,
+      minmax(300px, 1fr)
+    );
+  gap: 22px;
+  width: 100%;
+  max-width: 1500px;
+  animation:
+    jobsEnter 0.65s ease 0.1s both;
+}
+
+
+/* =========================================================
+   JOB CARD
+========================================================= */
+
+.jobCard {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  padding: 25px;
+  min-height: 235px;
+  border-radius: 18px;
+  border: 1px solid #e7ebf3;
+  background:
+    linear-gradient(
+      145deg,
+      #ffffff,
+      #fafbff
+    );
+  box-shadow:
+    0 8px 25px
+    rgba(15, 23, 42, 0.06);
+  overflow: hidden;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.jobCard::before {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  top: -110px;
+  right: -90px;
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle,
+      rgba(99, 102, 241, 0.12),
+      transparent 70%
+    );
+  filter: blur(15px);
+  pointer-events: none;
+  transition:
+    transform 0.4s ease;
+}
+
+.jobCard::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 25px;
+  width: 40px;
+  height: 3px;
+  border-radius: 10px;
+  background:
+    linear-gradient(
+      90deg,
+      #6366f1,
+      #06b6d4
+    );
+  opacity: 0;
+  transition:
+    opacity 0.3s ease,
+    width 0.3s ease;
+}
+
+.jobCard:hover {
+  transform: translateY(-5px);
+  border-color:
+    rgba(99, 102, 241, 0.2);
+  box-shadow:
+    0 18px 40px
+    rgba(15, 23, 42, 0.11);
+}
+
+.jobCard:hover::before {
+  transform: scale(1.35);
+}
+
+.jobCard:hover::after {
+  opacity: 1;
+  width: 70px;
+}
+
+
+/* =========================================================
+   JOB CONTENT
+========================================================= */
+
+.jobCard > h3 {
+  position: relative;
+  z-index: 2;
+  margin: 0 0 8px;
+  font-size: 20px;
+  line-height: 1.3;
+  font-weight: 750;
+  letter-spacing: -0.4px;
+  color: #111827;
+  overflow-wrap: anywhere;
+}
+
+.jobCard > span {
+  position: relative;
+  z-index: 2;
+  display: block;
+  margin-bottom: 10px;
+  color: #6366f1;
+  font-size: 14px;
+  font-weight: 650;
+  overflow-wrap: anywhere;
+}
+
+.jobCard > p {
+  position: relative;
+  z-index: 2;
+  margin: 7px 0;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   JOB TOP
+========================================================= */
+
+.jobTop {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 9px;
+  min-width: 0;
+}
+
+.jobTop h3 {
+  min-width: 0;
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.3;
+  font-weight: 750;
+  color: #111827;
+  overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   LOCATION
+========================================================= */
+
+.location {
+  position: relative;
+  z-index: 2;
+  margin: 0 0 14px;
+  color: #64748b;
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   DELETE JOB
+========================================================= */
+
+.deleteBtn {
+  position: relative;
+  z-index: 5;
+  margin-top: 15px;
+  padding: 9px 13px;
+  border:
+    1px solid rgba(239, 68, 68, 0.12);
+  border-radius: 9px;
+  background:
+    rgba(239, 68, 68, 0.08);
+  color: #dc2626;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.deleteBtn:hover {
+  background:
+    rgba(239, 68, 68, 0.13);
+  transform: translateY(-2px);
+  box-shadow:
+    0 7px 17px
+    rgba(239, 68, 68, 0.12);
+}
+
+
+/* =========================================================
+   APPLICANTS SECTION
+========================================================= */
+
+.applicants {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  margin-top: 18px;
+  padding-top: 15px;
+  border-top:
+    1px solid #edf0f5;
+}
+
+
+/* =========================================================
+   APPLICANT ROW
+========================================================= */
+
+.applicant {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  grid-template-columns:
+    minmax(150px, 1.5fr)
+    minmax(80px, 0.7fr)
+    minmax(110px, 1fr)
+    minmax(110px, 1fr)
+    auto
+    auto;
+  align-items: center;
+  gap: 13px;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 15px 16px;
+  margin-top: 12px;
+  border:
+    1px solid #e5eaf2;
+  border-radius: 13px;
+  background:
+    linear-gradient(
+      135deg,
+      #f9fbff,
+      #f4f7fc
+    );
+  font-size: 13px;
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.applicant:hover {
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff,
+      #f5f7ff
+    );
+  border-color:
+    rgba(99, 102, 241, 0.2);
+  transform: translateY(-2px);
+  box-shadow:
+    0 8px 22px
+    rgba(15, 23, 42, 0.07);
+}
+
+
+/* =========================================================
+   CANDIDATE INFORMATION
+========================================================= */
+
+.applicant > div:first-child {
+  min-width: 0;
+}
+
+.applicant > div:first-child strong {
+  display: block;
+  margin-bottom: 4px;
+  color: #111827;
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.applicant > div:first-child span {
+  display: block;
+  color: #64748b;
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+/* =========================================================
+   APPLICANT DATA
+========================================================= */
+
+.applicant > div:not(:first-child) {
+  min-width: 0;
+  color: #475569;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.applicant > div:not(:first-child) strong {
+  color: #334155;
+  font-weight: 650;
+}
+
+
+/* =========================================================
+   APPLICANT BUTTONS
+========================================================= */
+
+.applicant > button {
+  position: relative;
+  z-index: 5;
+  min-height: 36px;
+  padding: 8px 12px;
+  border:
+    1px solid #dfe4ec;
+  border-radius: 9px;
+  background: #ffffff;
+  color: #475569;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 650;
+  white-space: nowrap;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.applicant > button:first-of-type:hover {
+  color: #4f46e5;
+  background:
+    rgba(99, 102, 241, 0.07);
+  border-color:
+    rgba(99, 102, 241, 0.25);
+  transform: translateY(-2px);
+  box-shadow:
+    0 6px 16px
+    rgba(99, 102, 241, 0.1);
+}
+
+.applicant > button:last-of-type {
+  margin-left: 0 !important;
+  background:
+    rgba(239, 68, 68, 0.07) !important;
+  color: #dc2626 !important;
+  border:
+    1px solid rgba(239, 68, 68, 0.16) !important;
+}
+
+.applicant > button:last-of-type:hover {
+  background:
+    rgba(239, 68, 68, 0.12) !important;
+  transform: translateY(-2px);
+  box-shadow:
+    0 6px 16px
+    rgba(239, 68, 68, 0.1);
+}
+
+
+/* =========================================================
+   EMPTY
+========================================================= */
+
+.empty {
+  padding: 10px 0;
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   AI ANALYSIS MODAL
+========================================================= */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 30px;
+  background:
+    rgba(15, 23, 42, 0.58);
+  backdrop-filter:
+    blur(10px);
+  -webkit-backdrop-filter:
+    blur(10px);
+  animation:
+    modalFade 0.25s ease both;
+}
+
+.modalContent {
+  position: relative;
+  width: min(850px, 100%);
+  max-height: 88vh;
+  overflow-y: auto;
+  box-sizing: border-box;
+  padding: 34px;
+  border:
+    1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 22px;
+  background:
+    linear-gradient(
+      145deg,
+      #ffffff,
+      #f8faff
+    );
+  box-shadow:
+    0 30px 80px
+    rgba(15, 23, 42, 0.28);
+  animation:
+    modalEnter 0.3s ease both;
+}
+
+.modalContent::-webkit-scrollbar {
+  width: 7px;
+}
+
+.modalContent::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.modalContent::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 20px;
+}
+
+.modalContent h2 {
+  margin: 0 45px 25px 0;
+  font-size: 25px;
+  font-weight: 800;
+  letter-spacing: -0.6px;
+  color: #111827;
+}
+
+.modalContent h3 {
+  margin: 24px 0 9px;
+  font-size: 15px;
+  font-weight: 750;
+  color: #1e293b;
+}
+
+.modalContent h1 {
+  margin: 25px 0 3px;
+  font-size: 52px;
+  line-height: 1;
+  font-weight: 850;
+  letter-spacing: -2px;
+  color: #4f46e5;
+}
+
+.modalContent p {
+  margin: 7px 0;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.modalContent hr {
+  border: 0;
+  border-top:
+    1px solid #e8ecf2;
+  margin: 22px 0;
+}
+
+.modalContent ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0;
+  margin: 12px 0 20px;
+  list-style: none;
+}
+
+.modalContent li {
+  padding: 7px 11px;
+  border:
+    1px solid rgba(99, 102, 241, 0.13);
+  border-radius: 999px;
+  background:
+    rgba(99, 102, 241, 0.08);
+  color: #4f46e5;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.modalContent > button:first-of-type {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 !important;
+  border:
+    1px solid #e5e7eb !important;
+  border-radius: 10px;
+  background:
+    #f8fafc !important;
+  color: #64748b;
+  font-size: 18px !important;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.modalContent > button:first-of-type:hover {
+  background:
+    #f1f5f9 !important;
+  color: #111827;
+  transform: rotate(4deg);
+}
+
+.modalContent > button:last-of-type {
+  margin-top: 25px;
+  padding: 11px 18px;
+  border: none;
+  border-radius: 10px;
+  background:
+    linear-gradient(
+      135deg,
+      #4f46e5,
+      #6366f1
+    );
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 650;
+  box-shadow:
+    0 8px 20px
+    rgba(79, 70, 229, 0.2);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.modalContent > button:last-of-type:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 12px 25px
+    rgba(79, 70, 229, 0.28);
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes cardEnter {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes jobsEnter {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes modalFade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalEnter {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1400px) {
+  .sidebar {
+    width: 280px;
+    min-width: 280px;
+  }
+
+  .main {
+    padding: 42px 50px 55px;
+  }
+
+  .header {
+    font-size: 34px;
+  }
+
+  .formCard {
+    padding: 34px;
+  }
+
+  .jobsGrid {
+    grid-template-columns:
+      repeat(
+        auto-fit,
+        minmax(420px, 1fr)
+      );
+    gap: 25px;
+  }
+
+  .jobCard {
+    padding: 28px;
+    min-height: 255px;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+  .sidebar {
+    width: 220px;
+    min-width: 220px;
+    padding: 25px 16px;
+  }
+
+  .main {
+    padding: 30px 25px;
+  }
+
+  .jobsGrid {
+    grid-template-columns:
+      repeat(
+        auto-fit,
+        minmax(280px, 1fr)
+      );
+  }
+
+  .applicant {
+    grid-template-columns:
+      1fr 1fr;
+    gap: 12px;
+  }
+
+  .applicant > button {
+    width: 100%;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+  .container {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+
+  /* ---------------------------------------------
+     SIDEBAR
+  --------------------------------------------- */
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 270px;
+    min-width: 270px;
+    min-height: 100vh;
+    padding: 25px 18px;
+    transform: translateX(-105%);
+    overflow-y: auto;
+    box-shadow:
+      15px 0 40px rgba(15, 23, 42, 0.25);
+    transition:
+      transform 0.3s cubic-bezier(
+        0.4,
+        0,
+        0.2,
+        1
+      );
+  }
+
+
+  /* OPEN SIDEBAR */
+
+  .sidebarOpen {
+    transform: translateX(0);
+  }
+
+
+  /* ---------------------------------------------
+     LOGO
+  --------------------------------------------- */
+
+  .logo {
+    margin-top: 55px;
+    margin-bottom: 35px;
+    font-size: 23px;
+  }
+
+
+  /* ---------------------------------------------
+     MENU
+  --------------------------------------------- */
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 7px;
+    overflow: visible;
+  }
+
+  .menu p {
+    width: 100%;
+    padding: 14px 16px;
+    margin: 0;
+    font-size: 14px;
+  }
+
+  .menu p:hover {
+    transform: translateX(3px);
+  }
+
+
+  /* ---------------------------------------------
+     MAIN
+  --------------------------------------------- */
+
+  .main {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    padding:
+      82px 18px 35px;
+    overflow-x: hidden;
+  }
+
+
+  /* ---------------------------------------------
+     HEADER
+  --------------------------------------------- */
+
+  .header {
+    margin-bottom: 22px;
+    font-size: 27px;
+    letter-spacing: -0.7px;
+  }
+
+
+  /* ---------------------------------------------
+     DASHBOARD GRID
+  --------------------------------------------- */
+
+  .grid {
+    grid-template-columns: 1fr;
+    width: 100%;
+    gap: 15px;
+  }
+
+  .bigCard {
+    grid-column: span 1;
+  }
+
+  .grid textarea {
+    grid-column: span 1;
+  }
+
+
+  /* ---------------------------------------------
+     CARDS
+  --------------------------------------------- */
+
+  .card,
+  .bigCard {
+    width: 100%;
+    min-width: 0;
+    padding: 21px;
+    border-radius: 16px;
+  }
+
+  .card p {
+    font-size: 30px;
+  }
+
+
+  /* ---------------------------------------------
+     FORM
+  --------------------------------------------- */
+
+  .formCard {
+    width: 100%;
+    padding: 22px 18px;
+    border-radius: 17px;
+  }
+
+
+  /* ---------------------------------------------
+     JOBS
+  --------------------------------------------- */
+
+  .jobsGrid {
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 100%;
+    gap: 16px;
+  }
+
+  .jobCard {
+    width: 100%;
+    min-width: 0;
+    min-height: auto;
+    padding: 21px;
+    border-radius: 16px;
+  }
+
+
+  /* ---------------------------------------------
+     APPLICANTS
+  --------------------------------------------- */
+
+  .applicants {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .applicant {
+    grid-template-columns: 1fr;
+    width: 100%;
+    gap: 11px;
+    padding: 16px;
+    overflow: hidden;
+  }
+
+  .applicant > button {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+
+  /* ---------------------------------------------
+     MODAL
+  --------------------------------------------- */
+
+  .modal {
+    padding: 15px;
+  }
+
+  .modalContent {
+    width: 100%;
+    max-width: 100%;
+    max-height: 92vh;
+    padding: 25px 20px;
+    border-radius: 18px;
+  }
+
+  .modalContent h2 {
+    font-size: 21px;
+  }
+
+  .modalContent h1 {
+    font-size: 43px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+  .main {
+    padding:
+      78px 14px 30px;
+  }
+
+  .header {
+    font-size: 24px;
+  }
+
+  .formCard {
+    padding:
+      20px 16px;
+  }
+
+  .jobCard {
+    padding: 19px;
+    border-radius: 15px;
+  }
+
+  .jobCard > h3,
+  .jobTop h3 {
+    font-size: 18px;
+  }
+
+  .applicant {
+    padding: 14px;
+    border-radius: 12px;
+  }
+
+  .modalContent {
+    padding:
+      24px 17px;
+  }
+
+  .modalContent h2 {
+    font-size: 20px;
+  }
+}
+
+
+/* =========================================================
+   EXTRA SMALL DEVICES
+========================================================= */
+
+@media (max-width: 360px) {
+  .sidebar {
+    width: 250px;
+    min-width: 250px;
+  }
+
+  .main {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .card,
+  .bigCard {
+    padding: 18px;
+  }
+
+  .formCard {
+    padding: 18px 14px;
+  }
+
+  .jobCard {
+    padding: 17px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .formCard,
+  .jobsGrid,
+  .modal,
+  .modalContent {
+    animation: none;
+  }
+
+  .jobCard,
+  .menu p,
+  .primaryBtn,
+  .deleteBtn,
+  .applicant,
+  .card,
+  .bigCard,
+  .sidebar {
+    transition: none;
+  }
+}
